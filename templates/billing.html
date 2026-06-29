@@ -333,6 +333,19 @@ renderBill();
 
 }
 
+document.getElementById("search").addEventListener("input", function(e) {
+    let query = e.target.value.toLowerCase();
+    let products = document.querySelectorAll(".product-grid .product");
+    products.forEach(p => {
+        let name = p.querySelector("div").innerText.toLowerCase();
+        if (name.includes(query)) {
+            p.style.display = "block";
+        } else {
+            p.style.display = "none";
+        }
+    });
+});
+
 </script>
 
 </body>
